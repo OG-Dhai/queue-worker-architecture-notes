@@ -98,7 +98,7 @@ graph TD
 
 BullMQ's exponential backoff doubles the waiting time after each failed attempt:
 
-$$\text{delay}_n = \text{base delay} \times 2^{\,n-1}$$
+$$\text{delay}_n = \text{base delay} \times 2^{n-1}$$
 
 Check jobs use a 5-second base delay, so a failing check is retried after about 5 and then 10 seconds before it is marked as failed. Notification jobs use a 10-second base delay and up to five attempts. This keeps temporary outages at a source from turning into a flood of immediate retries.
 
